@@ -1,5 +1,7 @@
 import os
 import sys
+import ast 
+
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # ✅ ffmpeg 설치 변수 및 함수 정의
@@ -31,14 +33,14 @@ setup_ffmpeg()
 from video.extract_mouth_landmarks import extract_mouth_landmarks
 from analysis.compare_shapes import calculate_similarity
 
-
-
-# ✅ 좌표 불러오는 함수
 def load_coords_from_txt(path):
     coords = []
-    with open(path, "r") as f:
+    with open(path, 'r') as f:
         for line in f:
-            coords.append(eval(line.strip()))  # 좌표가 [(x, y), ...] 문자열로 저장돼 있는 경우
+            try:
+                coords.append(ast.literal_eval(line.strip()))
+            except (SyntaxError, ValueError):
+                st.warning(f"⚠️ 잘못된 좌표 형식 무시됨: {line.strip()}")
     return coords
 
 # ✅ 파일 경로
