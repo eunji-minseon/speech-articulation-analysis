@@ -4,3 +4,4 @@ numpy
 gTTS
 matplotlib
 mediapipe==0.10.0
+imageio-ffmpeg==0.4.8
