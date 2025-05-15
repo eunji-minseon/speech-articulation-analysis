@@ -3,5 +3,4 @@ opencv-python
 numpy
 gTTS
 matplotlib
-opencv-python
 mediapipe==0.10.0

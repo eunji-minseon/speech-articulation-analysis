@@ -1,7 +1,5 @@
 import os
 import sys
-import subprocess
-import shutil
 
 # ✅ 현재 경로를 import 경로로 등록
 sys.path.append(os.path.abspath("."))
