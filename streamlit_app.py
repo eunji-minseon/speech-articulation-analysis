@@ -1,8 +1,6 @@
 import os
 import sys
-
-# ✅ 현재 경로를 import 경로로 등록
-sys.path.append(os.path.abspath("."))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # ✅ ffmpeg 설치 변수 및 함수 정의
 FFMPEG_URL = "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz"
