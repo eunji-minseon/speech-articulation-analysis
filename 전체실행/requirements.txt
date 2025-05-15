@@ -1,0 +1,6 @@
+streamlit
+mediapipe
+opencv-python
+numpy
+gTTS
+matplotlib

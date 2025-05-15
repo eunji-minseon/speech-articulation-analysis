@@ -27,18 +27,6 @@ def setup_ffmpeg():
 
 setup_ffmpeg()
 
-# ✅ pip 패키지 설치
-auto_packages = ["opencv-python", "mediapipe", "numpy"]
-
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-for pkg in auto_packages:
-    try:
-        __import__(pkg.split('-')[0])
-    except ImportError:
-        install(pkg)
-
 # ✅ src 번역하기 위해 경로 추가
 sys.path.append("..")
 
